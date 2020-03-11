@@ -1,0 +1,92 @@
+extends _layouts/base
+mixin fav
+  .column.small-6.medium-4
+    .card
+      .card-img
+        a(href="#")
+          img(src=baseUrl+"images/redvelvet.jpg")
+mixin article
+  .columns.medium-6
+    article.card.my-4.bordered.shadow
+      .card-section
+        h4.mb-0 Red Velvet
+        p.text-right
+          small.subtitle 11 de marzo de 2020
+      .card-image
+        img(src=baseUrl+"images/redvelvet.jpg")
+      .card-section
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus orci justo, eu vestibulum mi venenatis interdum. Pellentesque eget arcu ut nisl pellentesque vulputate. Proin pulvinar arcu viverra arcu mattis gravida. Nunc velit tellus, ullamcorper mattis suscipit sed, mattis a metus. Cras quis augue nec odio efficitur faucibus laoreet vehicula orci. Cras rutrum, enim id sodal ...
+        .input-group
+          span.input-group-label
+            i.fa.fa-user
+          input.input-group-field(type="text" placeholder="deja un comentario...")
+          .input-group-button
+            span
+
+
+prepend stylesheets
+  link(rel='stylesheet', href= 'https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.1/css/foundation-float.min.css')
+
+prepend scripts
+  script(src= 'https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.1/js/foundation.min.js')
+  script.
+    $(document).foundation();
+
+block content
+  .foundation-blog.bg-white
+    .top-bar.bg-white.p-0
+      .row
+        .columns.large-4.p-0
+          ul.menu.bg-red.bg-logo
+            li.menu-text.text-right
+              h1.h3 Postres El Diablito
+              p.subheader Gula sin remordimiento
+    .row(style="position:relative")
+      .columns.large-4.bg-red.py-4
+        ul.vertical.menu
+          li
+            a(href='#') Inicio
+          li
+            a(href='#') Mi plato perfecto
+          li
+            a(href='#') Mis recetas
+        hr
+        h6 Favoritos
+        .row
+          +fav
+          +fav
+          +fav
+          +fav
+          +fav
+          +fav
+        hr
+        fieldset
+          .input-group
+            span.input.group-label
+            input.input-group-field(type="text" placeholder="Buscar..." style="width: 100%; height: 39px;")
+            .input-group-button
+              button.button(type="button")
+                i.fa.fa-search
+        ul
+          li
+            a(href="#") XXXXXXXXXXXXXXX
+          li
+            a(href="#") XXXXXXXXXXXXXXX
+          li
+            a(href="#") XXXXXXXXXXXXXXX
+          li
+            a(href="#") XXXXXXXXXXXXXXX
+          li
+            a(href="#") XXXXXXXXXXXXXXX
+          li
+            a(href="#") XXXXXXXXXXXXXXX
+      .columns.large-8
+        .row
+          +article
+          +article
+          +article
+          +article
+
+
+
+

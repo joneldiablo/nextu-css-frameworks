@@ -1,0 +1,82 @@
+extends _layouts/base
+
+mixin article
+  article.my-4
+    .row.align-items-center
+      .col.col-12.col-sm-4
+        img.img-article.rounded.img-fluid.d-block.m-auto(src=baseUrl + 'images/mago-de-oz-1.jpg')
+      .col.col-12.col-sm-8
+        h3.h5
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus orci justo, eu vestibulum mi venenatis interdum. Pellentesque eget arcu ut nisl pellentesque vulputate. Proin pulvinar arcu viverra arcu mattis gravida. Nunc velit tellus, ullamcorper mattis suscipit sed, mattis a metus. Cras quis augue nec odio efficitur faucibus laoreet vehicula orci. Cras rutrum, enim id sodal ...
+        .input-group.flex-nowrap
+          .input-group-prepend
+            span.input-group-text
+              i.fa.fa-user
+          input.form-control(type='text' placeholder='¿Tú qué opinas? déjanos un comentario...')
+    hr.border-secondary
+
+
+prepend stylesheets
+  link(rel='stylesheet', href= 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+  link(rel='stylesheet', href= 'https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css')
+
+prepend scripts
+  script(src= 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+
+block content
+  .bs-blog
+    header
+      nav.navbar.navbar-expand-md.navbar-dark.bg-dark.align-items-end
+        a.navbar-brand(href=baseUrl + 'bootstrap-musica.html')
+          img(src=baseUrl + 'images/diablito-animado-png-2.png' height="200" alt="MusicMan")
+        ul.nav.ml-auto.pr-lg-5.mr-lg-4
+          li.nav-item
+            a.nav-link(href="https://twitter.com")
+              <i class="fa fa-twitter"></i>
+              span.sr-only Twitter
+          li.nav-item
+            a.nav-link(href="https://instagram.com")
+              <i class="fa fa-instagram"></i>
+              span.sr-only Instagram
+          li.nav-item
+            a.nav-link(href="https://facebook.com")
+              <i class="fa fa-facebook"></i>
+              span.sr-only Facebook
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+    nav.navbar.p-0.py-md-2.navbar-expand-md.navbar-dark.bg-dark.sticky-top
+      #navbarNav.collapse.navbar-collapse.flex-column.flex-sm-row
+        a.flex-md-fill.text-center.nav-link(href=baseUrl + 'bootstrap-musica.html') Inicio
+        a.flex-md-fill.text-center.nav-link(href="#") Artistas
+        a.flex-md-fill.text-center.nav-link(href="#") Grupos
+        a.flex-md-fill.text-center.nav-link(href="#") Top 10
+        a.flex-md-fill.text-center.nav-link(href="#") Letras
+        a.flex-md-fill.text-center.nav-link(href="#") Acordes
+    .container.mt-5
+      .row.justify-content-center
+        .col.col-12.col-md-4.order-md-2.mb-4
+          form(action="#")
+            .input-group.flex-nowrap
+              input.form-control(type='text' placeholder='Buscar...')
+              .input-group-append
+                button(type="button" data-toggle='collapse' data-target='#dummySearch' aria-expanded='false' aria-controls='dummySearch').input-group-text
+                  i.fa.fa-search
+          hr.border-secondary
+          #dummySearch.collapse
+            .list-group
+              a.list-group-item.list-group-item-action(href='#')
+                | Cras justo odio
+              a.list-group-item.list-group-item-action(href='#') Dapibus ac facilisis in
+              a.list-group-item.list-group-item-action(href='#') Morbi leo risus
+              a.list-group-item.list-group-item-action(href='#') Porta ac consectetur ac
+              a.list-group-item.list-group-item-action(href='#') Vestibulum at eros
+        .col.col-12.col-md-8.order-md-1
+          +article
+          +article
+          +article
+          +article
+          +article
+
+
+
+
