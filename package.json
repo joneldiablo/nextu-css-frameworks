@@ -66,7 +66,7 @@
     "serve": "NODE_ENV=development npx gulp serve",
     "serve:prod": "NODE_ENV=production npx gulp serve --production",
     "build": "NODE_ENV=production npx gulp --production",
-    "postbuild": "purgecss --css build/styles/*.css --content build/foundation-gastronomia.html build/bootstrap-musica.html build/scripts/*.js --output build/styles"
+    "//postbuild": "purgecss --css build/styles/*.css --content build/foundation-gastronomia.html build/bootstrap-musica.html build/scripts/*.js --output build/styles"
   },
   "engines": {
     "node": ">=8.16.0"

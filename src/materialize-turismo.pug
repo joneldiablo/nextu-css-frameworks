@@ -1,7 +1,115 @@
 extends _layouts/base
 
-block stylesheets
-  link(rel='stylesheet', href= baseUrl + 'styles/main-materialize.css')
+prepend stylesheets
+  link(rel='stylesheet', href= 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+  link(rel='stylesheet', href= 'https://fonts.googleapis.com/icon?family=Material+Icons')
+
+prepend scripts
+  script(src= 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+  script.
+    $(document).ready(function(){
+      $('.sidenav').sidenav({
+        edge: 'right'
+      });
+    });
 
 block content
+  .materialize-blog
+    .navbar-fixed
+      nav.nav-extended.teal
+        .nav-wrapper.container
+          a.brand-logo.left(href='/materialize-turismo.html')
+            img(src=baseUrl+"images/T8KKBD-removebg-preview.png" style="max-width:144px")
+          a.sidenav-trigger.right(href="#" data-target="mobile-menu")
+            i.material-icons menu
+          ul.right.hide-on-med-and-down
+            li
+              a(href='/materialize-turismo.html') Inicio
+            li
+              a(href='#') Costos
+            li
+              a(href='#') Viajes
+            li
+              a(href='#') Recomendaciones
+    ul#mobile-menu.sidenav.right
+      li
+        a(href='/materialize-turismo.html') Inicio
+      li
+        a(href='#') Costos
+      li
+        a(href='#') Viajes
+      li
+        a(href='#') Recomendaciones
+      li
+        a.btn.waves-effect.waves-light.pink.accent-2.left-text
+          span Instagram
+          i.fa.fa-instagram.white-text
+        a.btn.waves-effect.waves-light.blue.darken-3.left-text
+          span Facebook
+          i.fa.fa-facebook.white-text
+        a.btn.waves-effect.waves-light.light-blue.left-text
+          span Twitter
+          i.fa.fa-twitter.white-text
+        a.btn.waves-effect.waves-light.red.darken-3.left-text
+          span Pinterest
+          i.fa.fa-pinterest.white-text
+        a.btn.waves-effect.waves-light.red.left-text
+          span Youtube
+          i.fa.fa-youtube.white-text
+
+    .nav-content.container
+      p.flow-text(style="margin-left:155px; margin-top:5px")
+        i Hasta donde llegues
+    .container
+      .row
+        mixin img(spec={})
+          - let height = spec.height || 'initial';
+          - let style={height};
+          .card.hoverable
+            .card-image
+              a(href="#")
+                img.responsive-img(src=baseUrl+"images/nature-forest-trees-fog-4827.jpg" style=style)
+                span.card-title Bosque
+        .col.s12.m6.l4(class=classes)
+          +img
+          +img
+        .col.s12.m6.l4(class=classes)
+          +img({height:'337px'})
+        .col.s12.m6.l4(class=classes)
+          .row
+            .col.s12.m6.l12
+              +img
+            .col.s12.m6.l12
+              +img
+      .row
+        .col.m8
+          .card-panel.light-green.lighten-5
+            h4.header
+              a.teal-text(href="#") Gran viaje al bosque
+            blockquote.teal-border
+              small 12 de enero 2020 - Cerca del bosque
+            .row
+              .col.m12.l7
+                a(href="#")
+                  img.responsive-img(src=baseUrl+'images/nature-forest-trees-fog-4827.jpg')
+              .col.m12.l5
+                p.justify-align Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus orci justo, eu vestibulum mi venenatis interdum. Pellentesque eget arcu ut nisl pellentesque vulputate. Proin pulvinar arcu viverra arcu mattis gravida.
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus orci justo, eu vestibulum mi venenatis interdum. Pellentesque eget arcu ut nisl pellentesque vulputate. Proin pulvinar arcu viverra arcu mattis gravida. Nunc velit tellus, ullamcorper mattis suscipit sed, mattis a metus. Cras quis augue nec odio efficitur faucibus laoreet vehicula orci. Cras rutrum, enim id sodal
+        .col.m4
+          img.circle.responsive-img.grey.darken-4(src=baseUrl+"images/diablito-animado-png-2.png")
+          h5.center-align Jonathan Diego
+          hr
+          p.justify-align Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus orci justo, eu vestibulum mi venenatis interdum. Pellentesque eget arcu ut nisl pellentesque vulputate. Proin pulvinar arcu viverra arcu mattis gravida.
+    .fixed-action-btn.left.hide-on-med-and-down
+      a.btn-floating.btn-large.waves-effect.waves-light.pink.accent-2
+        i.fa.fa-instagram
+      a.btn-floating.btn-large.waves-effect.waves-light.blue.darken-3
+        i.fa.fa-facebook
+      a.btn-floating.btn-large.waves-effect.waves-light.light-blue
+        i.fa.fa-twitter
+      a.btn-floating.btn-large.waves-effect.waves-light.red.darken-3
+        i.fa.fa-pinterest
+      a.btn-floating.btn-large.waves-effect.waves-light.red
+        i.fa.fa-youtube
+
 

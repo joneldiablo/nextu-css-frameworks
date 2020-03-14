@@ -108,3 +108,21 @@
     }
   }
 }
+
+.materialize-blog {
+  .fixed-action-btn.left {
+    left: 35px;
+    right: initial;
+    width: 56px;
+    top: 150px;
+    a {
+      margin-bottom: 20px;
+    }
+  }
+  .teal-border {
+    border-color: #009688;
+  }
+  .justify-align {
+    text-align: justify;
+  }
+}
