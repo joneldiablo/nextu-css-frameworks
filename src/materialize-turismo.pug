@@ -11,6 +11,15 @@ prepend scripts
       $('.sidenav').sidenav({
         edge: 'right'
       });
+      //no funcionan
+      //M.AutoInit();
+      //M.updateTextFields();
+      //patch
+      $('input').on('focus', (e)=>{
+        $(e.target).parent().find('label').addClass('active');
+      }).on('blur', (e)=>{
+        $(e.target).parent().find('label').removeClass('active');
+      });
     });
 
 block content
@@ -95,6 +104,12 @@ block content
               .col.m12.l5
                 p.justify-align Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus orci justo, eu vestibulum mi venenatis interdum. Pellentesque eget arcu ut nisl pellentesque vulputate. Proin pulvinar arcu viverra arcu mattis gravida.
             p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus orci justo, eu vestibulum mi venenatis interdum. Pellentesque eget arcu ut nisl pellentesque vulputate. Proin pulvinar arcu viverra arcu mattis gravida. Nunc velit tellus, ullamcorper mattis suscipit sed, mattis a metus. Cras quis augue nec odio efficitur faucibus laoreet vehicula orci. Cras rutrum, enim id sodal
+            form
+              .row
+                .input-field.col.s12
+                  i.material-icons.prefix account_circle
+                  input#icon_prefix.validate(type='text')
+                  label(for='icon_prefix') Deja un comentario
         .col.m4
           img.circle.responsive-img.grey.darken-4(src=baseUrl+"images/diablito-animado-png-2.png")
           h5.center-align Jonathan Diego
