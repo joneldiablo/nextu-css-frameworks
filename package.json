@@ -2,7 +2,7 @@
   "name": "frameworks-blogs",
   "version": "0.0.1",
   "dependencies": {
-    "jquery": "~3.4.1"
+    "jquery": "~3.5.0"
   },
   "devDependencies": {
     "@babel/core": "~7.0.0",
