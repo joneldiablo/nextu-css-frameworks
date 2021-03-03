@@ -49,7 +49,7 @@
     "materialize-css": "^1.0.0",
     "minimist": "~1.2.0",
     "prettier": "~1.16.4",
-    "pug": "~2.0.4",
+    "pug": "~3.0.1",
     "purgecss": "^2.1.0",
     "rimraf": "2.6.3",
     "vinyl-buffer": "~1.0.1",
