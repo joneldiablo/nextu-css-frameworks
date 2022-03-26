@@ -47,7 +47,7 @@
     "js-yaml": "~3.13.0",
     "lodash": "~4.17.4",
     "materialize-css": "^1.0.0",
-    "minimist": "~1.2.0",
+    "minimist": "~1.2.6",
     "prettier": "~1.16.4",
     "pug": "~2.0.4",
     "purgecss": "^2.1.0",
